@@ -5,14 +5,15 @@ const mongoose = require('mongoose');
 const logController = require('./controllers/logs.js');
 const methodOverride = require('method-override');
 
-// mongoose.connect('mongodb://localhost:27017/basiccrud', {
-//     useNewUrlParser: true,
-// });
-
-mongoose.connect(process.env.mongoURI, {
+mongoose.connect('mongodb://localhost:27017/basiccrud', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
+
+// mongoose.connect(process.env.mongoURI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// });
 
 mongoose.connection.once('open', () => {
     console.log('connected to mongo');
