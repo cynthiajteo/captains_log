@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <%- include('./partials/head.ejs')%>
     </head>
     <body>
-        <h1>Edit Log Page</h1>
-        <form action="/logs/<%=log.id%>?_method=PUT" method="POST">
-            <!--  NOTE: the form is pre-populated with values for the server-->
-            Title:
-            <input type="text" name="title" value="<%=log.title%>" /><br />
-            Entry:
-            <input type="text" name="color" value="<%=log.entry%>" /><br />
-            Is Ship Broken: <input type="checkbox" name="shipIsBroken" <%
-            if(log.shipIsBroken === true){ %> checked <% } %> />
-            <br />
-            <input type="submit" name="" value="Submit Changes" />
-        </form>
+        <div class="container">
+            <h1>Edit Log Page</h1>
+            <form action="/logs/<%=log.id%>?_method=PUT" method="POST">
+                <!--  NOTE: the form is pre-populated with values for the server-->
+                Title:
+                <input type="text" name="title" value="<%=log.title%>" /><br />
+                Entry:
+                <input type="text" name="color" value="<%=log.entry%>" /><br />
+                Is Ship Broken: <input type="checkbox" name="shipIsBroken" <%
+                if(log.shipIsBroken === true){ %> checked <% } %> />
+                <br />
+                <input type="submit" name="" value="Submit Changes" />
+            </form>
+        </div>
     </body>
 </html>
