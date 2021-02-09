@@ -4,8 +4,9 @@ const port = process.env.PORT || 3000;
 const mongoose = require('mongoose');
 const logController = require('./controllers/logs.js');
 const methodOverride = require('method-override');
+require('dotenv').config();
 
-mongoose.connect('mongodb://localhost:27017/basiccrud', {
+mongoose.connect(process.env.mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
